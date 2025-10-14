@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Chart js  -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- css -->
+  <link rel="stylesheet" href="style.css" />
+  <title>AdminSite</title>
+</head>
+
+<body>
+  <!-- Side Bar -->
+  <section id="sidebar">
+    <div class="brand">
+      <img class="brand-img" src="./images/link3.jpg" alt="" />
+      <div class="brand2">
+        <a href="#"><span class="logo">Infini</span>BOX</a>
+        <h5>
+          <span class="logo-text">Innovated by <br /></span>Link3 Technologies
+          LTD
+        </h5>
+      </div>
+    </div>
+    <div class="side-menu">
+      <div class="last-update">
+        <p href="#" class="last-update-btn">Synced:</p>
+        <p class="last-update-time" id="lastUpdateTime"></p>
+        <p class="last-update-time" id="lastUpdateDate"></p>
+      </div>
+      <a href="./Factory/factory.html" class="active">Switch To Factory</a>
+    </div>
+    <!-- Alert Unit -->
+    <div class="alert">
+      <a href="#" class="alert-btn-upgrade">Alert Box</a>
+      <div class="wrapper">
+        <ul id="alert-list" class="alert-list"></ul>
+      </div>
+    </div>
+
+    <!-- Device Information -->
+    <div class="device">
+      <a href="#" class="device-btn-upgrade">Device Information</a>
+      <div class="device-wrapper">
+        <div class="device-wrapper-card">
+          <h5 class="device-label">LAN IP</h5>
+          <h5 class="device-value" id="device-lan">: 192.168.0.128</h5>
+        </div>
+
+        <div class="device-wrapper-card">
+          <h5 class="device-label">GSM Operator</h5>
+          <h5 class="device-value" id="gsm-operator">: GP</h5>
+        </div>
+
+        <div class="device-wrapper-card">
+          <h5 class="device-label">GSM Signal</h5>
+          <h5 class="device-value" id="gsm-signal">: 50</h5>
+        </div>
+
+        <div class="device-wrapper-card">
+          <h5 class="device-label">Internal Battery</h5>
+          <h5 class="device-value" id="internal-battery">: 4.1</h5>
+        </div>
+
+        <div class="device-wrapper-card">
+          <h5 class="device-label">PSU Status 1</h5>
+          <h5 class="device-value" id="device-psu1">: OK</h5>
+        </div>
+
+        <div class="device-wrapper-card">
+          <h5 class="device-label">PSU Status 2</h5>
+          <h5 class="device-value" id="device-psu2">: Ok</h5>
+        </div>
+
+        <div class="device-wrapper-card">
+          <h5 class="device-label">Data Path</h5>
+          <h5 class="device-value" id="data-source">: LAN</h5>
+        </div>
+
+        <ul id="alert-list" class="alert-list"></ul>
+      </div>
+    </div>
+    <!-- <div class="device">
+        <a href="#" class="device-btn-upgrade">Customer Service</a>
+        <div class="device-wrapper">
+          <div class="device-wrapper-card">
+            <h5 class="device-label">Contact</h5>
+            <h5 class="device-value">: 01787686086</h5>
+          </div>
+
+          <div class="device-wrapper-card">
+            <h5 class="device-label">Billing Status</h5>
+            <h5 class="device-value">: Pending</h5>
+          </div>
+
+          <div class="device-wrapper-card">
+            <h5 class="device-label">License Status</h5>
+            <h5 class="device-value">: Active</h5>
+          </div>
+
+          <div class="device-wrapper-card">
+            <h5 class="device-label">License Validity</h5>
+            <h5 class="device-value" >: 30/9/2025</h5>
+          </div>
+
+          <div class="device-wrapper-card">
+            <h5 class="device-label">Link3 Products</h5>
+            <h5 class="device-value"><a href="https://link3.net/">: Buy More..</a></h5>
+          </div>
+
+          <ul id="alert-list" class="alert-list"></ul>
+        </div>
+      </div> -->
+  </section>
+
+  <!-- Nav -->
+  <section id="content">
+    <nav>
+      <div class="breadcumb">
+        <h1 class="title">Distribution Box Dashboard</h1>
+      </div>
+      <div class="profile-box">
+        <h3 class="profile-user"><span>User:</span> Link3 Technologies LTD</h3>
+        <span class="divider"></span>
+        <div class="profile">
+          <img src="images/link3.jpg" alt="" />
+        </div>
+        <span class="divider"></span>
+        <p class="logOut-btn" id="log-out">Log Out</p>
+      </div>
+    </nav>
+
+    <!-- Main -->
+    <main>
+      <!-- Gauge card start -->
+      <!-- Gauges Row -->
+      <div class="gauges-container">
+        <div class="gauge-card">
+          <h3 class="gauge-title"><i class="fas fa-bolt"></i> Voltage</h3>
+          <div class="gauge">
+            <div class="gauge-bg">
+              <div class="gauge-fill" id="voltage-fill" style="color: #3867D6;"></div>
+            </div>
+            <div class="gauge-center">
+              <div class="gauge-value" id="voltage-value">230<span class="gauge-unit">V</span></div>
+            </div>
+          </div>
+          <div class="status status-normal">Normal</div>
+        </div>
+
+        <div class="gauge-card">
+          <h3 class="gauge-title"><i class="fas fa-plug"></i> Total Load</h3>
+          <div class="gauge">
+            <div class="gauge-bg">
+              <div class="gauge-fill" id="total-load-fill" style="color: #4ECDC4;"></div>
+            </div>
+            <div class="gauge-center">
+              <div class="gauge-value" id="total-load-value">75<span class="gauge-unit">A</span></div>
+            </div>
+          </div>
+          <div class="status status-warning">High</div>
+        </div>
+
+        <div class="gauge-card">
+          <h3 class="gauge-title"><i class="fas fa-server"></i> UPS1 Current</h3>
+          <div class="gauge">
+            <div class="gauge-bg">
+              <div class="gauge-fill" id="ups1-current-fill" style="color: #FE9B13;"></div>
+            </div>
+            <div class="gauge-center">
+              <div class="gauge-value" id="ups1-current-value">32<span class="gauge-unit">A</span></div>
+            </div>
+          </div>
+          <div class="status status-normal">Normal</div>
+        </div>
+
+        <div class="gauge-card">
+          <h3 class="gauge-title"><i class="fas fa-server"></i> UPS2 Current</h3>
+          <div class="gauge">
+            <div class="gauge-bg">
+              <div class="gauge-fill" id="ups2-current-fill" style="color: #FC5C65;"></div>
+            </div>
+            <div class="gauge-center">
+              <div class="gauge-value" id="ups2-current-value">28<span class="gauge-unit">A</span></div>
+            </div>
+          </div>
+          <div class="status status-normal">Normal</div>
+        </div>
+
+        <div class="gauge-card">
+          <h3 class="gauge-title"><i class="fas fa-wind"></i> Air Cooler Current</h3>
+          <div class="gauge">
+            <div class="gauge-bg">
+              <div class="gauge-fill" id="air-cooler-current-fill" style="color: #9b59b6;"></div>
+            </div>
+            <div class="gauge-center">
+              <div class="gauge-value" id="air-cooler-current-value">15<span class="gauge-unit">A</span></div>
+            </div>
+          </div>
+          <div class="status status-normal">Normal</div>
+        </div>
+      </div>
+
+      <!-- Charts Row -->
+      <div class="charts-container">
+        <div class="chart-card">
+          <h3 class="chart-title"><i class="fas fa-chart-bar"></i> DB Load Distribution</h3>
+          <div class="chart-container">
+            <canvas id="load-chart"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <h3 class="chart-title"><i class="fas fa-thermometer-half"></i> DB Temperature</h3>
+          <div class="chart-container">
+            <canvas id="temperature-chart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Circuit Breaker Row -->
+      <div class="cb-container">
+        <h3 class="cb-heading">
+          <i class="fas fa-toggle-on"></i> Circuit Breaker Status
+        </h3>
+        <div class="cb-row">
+        <div class="cb-grid">
+          <div class="cb-title">CB1</div>
+          <div class="cb-status">
+            <div class="cb-switch"></div>
+          </div>
+          <div class="cb-label cb-on">ON</div>
+        </div>
+
+        <div class="cb-grid">
+          <div class="cb-title">CB2</div>
+          <div class="cb-status">
+            <div class="cb-switch"></div>
+          </div>
+          <div class="cb-label cb-on">ON</div>
+        </div>
+
+        <div class="cb-grid">
+          <div class="cb-title">CB3</div>
+          <div class="cb-status">
+            <div class="cb-switch off"></div>
+          </div>
+          <div class="cb-label cb-off">OFF</div>
+        </div>
+
+        <div class="cb-grid">
+          <div class="cb-title">CB4</div>
+          <div class="cb-status">
+            <div class="cb-switch"></div>
+          </div>
+          <div class="cb-label cb-on">ON</div>
+        </div>
+
+        <div class="cb-grid">
+          <div class="cb-title">CB5</div>
+          <div class="cb-status">
+            <div class="cb-switch"></div>
+          </div>
+          <div class="cb-label cb-on">ON</div>
+        </div>
+
+        <div class="cb-grid">
+          <div class="cb-title">CB6</div>
+          <div class="cb-status">
+            <div class="cb-switch"></div>
+          </div>
+          <div class="cb-label cb-on">ON</div>
+        </div>
+
+        <div class="cb-grid">
+          <div class="cb-title">CB7</div>
+          <div class="cb-status">
+            <div class="cb-switch"></div>
+          </div>
+          <div class="cb-label cb-on">ON</div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </main>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Link3 Technologies LTD. All rights reserved.</p>
+  </footer>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> -->
+  <script src="script.js"></script>
+</body>
+
+</html>
