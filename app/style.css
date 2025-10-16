@@ -349,7 +349,7 @@ nav {
 }
 
 .profile-box h3 {
-  color: var(--yellow);
+  color: var(--blue);
 }
 
 .profile-box .divider {
@@ -360,7 +360,7 @@ nav {
 }
 
 .profile-box span {
-  color: var(--blue);
+  color: #21c7b0;
   font-size: 24px;
 }
 

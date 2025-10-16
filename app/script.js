@@ -96,11 +96,11 @@ function updateAllData(a, b, c, d, e, f) {
     });
 
     // Alert for inputVoltage
-    if (inputVoltage >= 0 && inputVoltage <= 190) {
-        gaugeAlert("Input Voltage", "low");
-    } else if (inputVoltage >= 246 && inputVoltage <= 300) {
-        gaugeAlert("Input Voltage", "high");
-    }
+    // if (inputVoltage >= 0 && inputVoltage <= 190) {
+    //     gaugeAlert("Input Voltage", "low");
+    // } else if (inputVoltage >= 246 && inputVoltage <= 300) {
+    //     gaugeAlert("Input Voltage", "high");
+    // }
 
     // Total Current (0-30A)
     const totalCurrent = b;
@@ -110,11 +110,11 @@ function updateAllData(a, b, c, d, e, f) {
     });
 
     // Alert for Total Current
-    if (totalCurrent >= 0 && totalCurrent <= 210) {
-        gaugeAlert("Total Current", "low");
-    } else if (totalCurrent >= 231 && totalCurrent <= 300) {
-        gaugeAlert("Total Current", "high");
-    }
+    // if (totalCurrent >= 0 && totalCurrent <= 210) {
+    //     gaugeAlert("Total Current", "low");
+    // } else if (totalCurrent >= 231 && totalCurrent <= 300) {
+    //     gaugeAlert("Total Current", "high");
+    // }
 
     // ups1 current (0-15A)
     const ups1Load = c;
@@ -125,11 +125,11 @@ function updateAllData(a, b, c, d, e, f) {
     });
 
     // Alert for ups1 current
-    if (ups1Load >= 0 && ups1Load <= 210) {
-        gaugeAlert("UPS1 Current", "low");
-    } else if (ups1Load >= 231 && ups1Load <= 300) {
-        gaugeAlert("UPS1 Current", "high");
-    }
+    // if (ups1Load >= 0 && ups1Load <= 210) {
+    //     gaugeAlert("UPS1 Current", "low");
+    // } else if (ups1Load >= 231 && ups1Load <= 300) {
+    //     gaugeAlert("UPS1 Current", "high");
+    // }
 
     // ups2 current (0-15A)
     const ups2Load = d;
@@ -140,11 +140,11 @@ function updateAllData(a, b, c, d, e, f) {
     });
 
     // Alert for ups2 current
-    if (ups2Load >= 221 && ups2Load <= 240) {
-        gaugeAlert("UPS2 Current", "low");
-    } else if (ups2Load >= 0 && ups2Load <= 220) {
-        gaugeAlert("UPS2 Current", "very Low");
-    }
+    // if (ups2Load >= 221 && ups2Load <= 240) {
+    //     gaugeAlert("UPS2 Current", "low");
+    // } else if (ups2Load >= 0 && ups2Load <= 220) {
+    //     gaugeAlert("UPS2 Current", "very Low");
+    // }
 
     // Air Cooler (0-20A)
     const cooler = e;
@@ -155,11 +155,11 @@ function updateAllData(a, b, c, d, e, f) {
     });
 
     // Alert for Air Cooler
-    if (cooler >= 26 && cooler <= 31) {
-        gaugeAlert("cooler", "high");
-    } else if (cooler >= 32 && cooler <= 55) {
-        gaugeAlert("cooler", "very high");
-    }
+    // if (cooler >= 26 && cooler <= 31) {
+    //     gaugeAlert("cooler", "high");
+    // } else if (cooler >= 32 && cooler <= 55) {
+    //     gaugeAlert("cooler", "very high");
+    // }
 
     // Grounding Value (0-10V)
     const ground = f;
@@ -171,11 +171,11 @@ function updateAllData(a, b, c, d, e, f) {
     });
 
     // Alert for Grounding Value
-    if (ground >= 0 && ground <= 40) {
-        gaugeAlert("Grounding Value", "low");
-    } else if (ground >= 81 && ground <= 100) {
-        gaugeAlert("Grounding Value", "high");
-    }
+    // if (ground >= 0 && ground <= 40) {
+    //     gaugeAlert("Grounding Value", "low");
+    // } else if (ground >= 81 && ground <= 100) {
+    //     gaugeAlert("Grounding Value", "high");
+    // }
 }
 // gauge data end
 
