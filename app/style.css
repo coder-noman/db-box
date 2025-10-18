@@ -593,6 +593,7 @@ main h1 {
   min-width: 100px;
   margin: 0 5px;
   text-align: center;
+  
 }
 
 .cb-title {
@@ -610,7 +611,7 @@ main h1 {
   background-color: #f1f1f1;
   border-radius: 5px;
   overflow: hidden;
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
 }
 
 .cb-switch {
